@@ -1,6 +1,8 @@
-package commander;
+package commander.unit;
 
 import java.util.Random;
+
+import commander.ui.MessageBoard;
 
 public class Soldier {
 	
