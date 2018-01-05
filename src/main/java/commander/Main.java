@@ -1,14 +1,14 @@
 package commander;
 
-import java.util.Random;
-
+import commander.map.Map;
 import commander.ui.MainWindow;
-import commander.unit.Soldier;
 
 public class Main {
+	
+	private static final Map map = new Map();
 
 	private static void createAndShowGUI() {
-		new MainWindow();
+		new MainWindow(map);
 	}
 
 	public static void main(String[] args) {
@@ -20,26 +20,26 @@ public class Main {
 		});
 		
 		// Start simulation
-		Random random = new Random();
-
-		Soldier a = new Soldier("A");
-		Soldier b = new Soldier("B");
-
-		while (true) {
-
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			
-			a.attack(random, b);
-			if (b.isDead())
-				break;
-
-			b.attack(random, a);
-			if (a.isDead())
-				break;
-		}
+//		Random random = new Random();
+//
+//		Soldier a = new Soldier("A");
+//		Soldier b = new Soldier("B");
+//
+//		while (true) {
+//
+//			try {
+//				Thread.sleep(500);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//			
+//			a.attack(random, b);
+//			if (b.isDead())
+//				break;
+//
+//			b.attack(random, a);
+//			if (a.isDead())
+//				break;
+//		}
 	}
 }

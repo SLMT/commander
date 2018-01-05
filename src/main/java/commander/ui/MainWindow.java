@@ -10,12 +10,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import commander.lib.SmartScroller;
+import commander.map.Map;
 
 public class MainWindow extends JFrame {
 
 	private static final long serialVersionUID = 597434847352551398L;
 	
-	public MainWindow() {
+	public MainWindow(Map map) {
 		JComponent com;
 		
 		// Create base panels
@@ -29,7 +30,7 @@ public class MainWindow extends JFrame {
 		add(lower, BorderLayout.PAGE_END);
 		
 		// Add Map panel
-		com = new JButton("Map");
+		com = new MapPanel(map);
 		com.setPreferredSize(new Dimension(1200, 600));
 		upper.add(com, BorderLayout.CENTER);
 		

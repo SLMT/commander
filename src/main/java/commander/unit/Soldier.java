@@ -2,6 +2,7 @@ package commander.unit;
 
 import java.util.Random;
 
+import commander.map.Position;
 import commander.ui.MessageBoard;
 
 public class Soldier {
@@ -12,11 +13,13 @@ public class Soldier {
 	private String name;
 	private int hp;
 	private boolean isDead;
+	private Position position;
 	
-	public Soldier(String name) {
+	public Soldier(String name, Position initPos) {
 		this.name = name;
 		this.hp = INITIAL_HP;
 		this.isDead = false;
+		this.position = initPos;
 	}
 	
 	public void attack(Random random, Soldier target) {
@@ -43,5 +46,9 @@ public class Soldier {
 	
 	public boolean isDead() {
 		return isDead;
+	}
+	
+	public Position getPos() {
+		return position;
 	}
 }
